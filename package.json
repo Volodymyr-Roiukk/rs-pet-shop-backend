@@ -1,0 +1,26 @@
+{
+  "name": "rs-pet-shop-backend",
+  "version": "1.0.0",
+  "description": "This is my pet shop for AWS course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Volodymyr-Roiukk/rs-pet-shop-backend.git"
+  },
+  "keywords": [
+    "Node.js",
+    "AWS"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Volodymyr-Roiukk/rs-pet-shop-backend/issues"
+  },
+  "homepage": "https://github.com/Volodymyr-Roiukk/rs-pet-shop-backend#readme",
+  "dependencies": {
+    "serverless": "^2.53.0"
+  }
+}
