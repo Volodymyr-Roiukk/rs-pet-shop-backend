@@ -1,0 +1,5 @@
+[
+  {"id": 1, "name": "Royal canin", "price": 200},
+  {"id": 2, "name": "Purina pro plan", "price": 150},
+  {"id": 3, "name": "Felix", "price": 100}
+]
