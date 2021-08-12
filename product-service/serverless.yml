@@ -67,7 +67,20 @@ functions:
     events:
       - http:
           path: products/{productId}
-          method: get        
+          method: get
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js' # Name of webpack configuration file
+    includeModules: false # Node modules configuration for packaging
+    packagePath: '../package.json'
+    nodeModulesRelativeDir: '../'
+    packager: 'npm' # Packager that will be used to package your external modules
+    excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
+
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
