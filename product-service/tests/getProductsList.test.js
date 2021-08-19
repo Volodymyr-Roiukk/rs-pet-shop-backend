@@ -1,16 +1,66 @@
 const {getProductsList} = require('../handlers/getProductsList');
 
 const defaultProducts = [
-  {id: 1, name: "product1", price: 20},
-  {id: 2, name: "product2", price: 30},
-  {id: 3, name: "product3", price: 40},
-  {id: 4, name: "product4", price: 100},
-  {id: 5, name: "product5", price: 312},
-  {id: 6, name: "product6", price: 44},
-  {id: 7, name: "product7", price: 204},
-  {id: 8, name: "product8", price: 2021},
-  {id: 9, name: "product9", price: 201},
-  {id: 10, name: "product10", price: 20123}
+  {
+    id: 1,
+    title: "Royal Canin Sterilised",
+    description: "The best premium food for your cats",
+    price: 19.99
+  },
+  {
+    id: 2,
+    title: "Royal Canin British Shorthair",
+    description: "The best premium food for your cats",
+    price: 14.99
+  },
+  {
+    id: 3,
+    title: "Royal Canin Sensible 33",
+    description: "The best premium food for your cats",
+    price: 9.99
+  },
+  {
+    id: 4,
+    title: "Royal Canin Kitten",
+    description: "The best premium food for your cats",
+    price: 9.99
+  },
+  {
+    id: 5,
+    title: "Royal Canin Indoor 27",
+    description: "The best premium food for your cats",
+    price: 19.99
+  },
+  {
+    id: 6,
+    title: "Royal Canin Hair & Skin Care",
+    description: "The best premium food for your cats",
+    price: 19.99
+  },
+  {
+    id: 7,
+    title: "Royal Canin Urinary Care",
+    description: "The best premium food for your cats",
+    price: 14.99
+  },
+  {
+    id: 8,
+    title: "Royal Canin Babycat",
+    description: "The best premium food for your cats",
+    price: 14.99
+  },
+  {
+    id: 9,
+    title: "Royal Canin Hairball Care",
+    description: "The best premium food for your cats",
+    price: 19.99
+  },
+  {
+    id: 10,
+    title: "Royal Canin Exigent Savour Sensation",
+    description: "The best premium food for your cats",
+    price: 20.99
+  }
 ];
 
 describe('getProductsList handler tests', () => {

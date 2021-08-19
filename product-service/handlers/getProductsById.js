@@ -1,7 +1,7 @@
-const fetch = require("node-fetch").default;
-const {PRODUCTS_API_PATH} = require('../constants');
+import fetch from 'node-fetch';
+import {PRODUCTS_API_PATH} from '../constants'
 
-module.exports.getProductsById = async ({pathParameters}) => {
+export const getProductsById = async ({pathParameters}) => {
   const {productId} = pathParameters;
 
   try {
