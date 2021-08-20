@@ -13,7 +13,7 @@
 #### Optional scope: All done without SWAGGER
 
 #### Product properties:
-#### Id
-#### title
-#### description
-#### price
+##### - Id
+##### - title
+##### - description
+##### - price
