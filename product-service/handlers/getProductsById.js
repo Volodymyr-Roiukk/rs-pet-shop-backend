@@ -18,7 +18,7 @@ export const getProductsById = async (e) => {
 
     return {
       statusCode: isFindProduct ? 200 : 404,
-      body: JSON.stringify(isFindProduct ? matchedProducts : {message: "Product is not found"})
+      body: JSON.stringify(isFindProduct ? products : {message: "Product is not found"})
     }
   } catch (e) {
     console.error(`Error: ${e}`);
