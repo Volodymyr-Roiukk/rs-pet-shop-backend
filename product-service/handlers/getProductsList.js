@@ -1,16 +1,23 @@
-import fetch from 'node-fetch';
-import {PRODUCTS_API_PATH} from '../constants'
+import { Client } from 'pg';
+import { dbOptions } from '../db/constants';
 
-export const getProductsList = async () => {
+export const getProductsList = async (e) => {
+  const client = new Client(dbOptions);
+  console.log('req: ', e);
+
   try {
-    const response = await fetch(PRODUCTS_API_PATH);
-    const products = await response.json();
+    await client.connect();
+    const { rows: products } = await client.query(`
+      select p.id, title, description, price, count
+      from products p left join stocks s 
+      on p.id = s.product_id
+    `);
 
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-        "Access-Control-Allow-Credentials" : true 
+        "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify(products),
     }
@@ -20,10 +27,12 @@ export const getProductsList = async () => {
     return {
       statusCode: 404,
       headers: {
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true 
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify({message: `Something went wrong: ${e.message}`}),
     }
+  } finally {
+    await client.end();
   }
 };

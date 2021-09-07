@@ -45,7 +45,7 @@ provider:
 
 # you can define service wide environment variables here
 #  environment:
-#    variable1: value1
+
 
 # you can add packaging information here
 #package:
@@ -62,12 +62,21 @@ functions:
       - http:
           path: products
           method: get
+          cors: true
   getProductsById:
     handler: index.getProductsById
     events:
       - http:
           path: products/{productId}
           method: get
+          cors: true
+  createNewProduct:
+    handler: index.createNewProduct
+    events:
+      - http:
+          path: products
+          method: post
+          cors: true      
 
 plugins:
   - serverless-webpack
